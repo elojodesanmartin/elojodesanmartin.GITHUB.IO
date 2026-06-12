@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corrupción, economía e incoherencia: el dilema anticasta de Milei — Juan Pablo Capriotti</title>
+<meta name="description" content="Cómo impactan los escándalos de corrupción y el freno económico en la imagen de un gobierno que llegó con la bandera anticasta. Análisis con datos.">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Corrupción, economía e incoherencia: el dilema del discurso anticasta de Javier Milei">
+<meta property="og:description" content="Escándalos de corrupción, freno económico y caída de imagen: qué dicen los datos y la teoría sobre el impacto en el gobierno de Milei.">
+<meta property="og:image" content="https://juampicapriotti.github.io/img/imagen-vs-inflacion-milei.png">
+<meta property="og:url" content="https://juampicapriotti.github.io/articulo-milei-corrupcion.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy:#16314f; --navy-deep:#0e1e30; --gold:#c29b40; --gold-soft:#d8bc78;
+    --cream:#f8f4ea; --cream-card:#fffdf7; --ink:#1e2329; --muted:#5c6470; --line:#e3dcc9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);
+       font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.6;
+       -webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .narrow{max-width:720px;margin:0 auto;padding:0 24px}
+
+  .dateline{background:var(--navy-deep);color:#cdd6e0;font-size:.74rem;
+            letter-spacing:.14em;text-transform:uppercase;padding:8px 0}
+  .dateline .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+  .dateline span:last-child{color:var(--gold-soft)}
+
+  .masthead{text-align:center;padding:30px 0 16px;border-bottom:1px solid var(--line)}
+  .masthead a.brand{font-family:'Cormorant Garamond',serif;font-weight:700;
+       font-size:clamp(1.8rem,4.5vw,2.6rem);color:var(--navy);text-decoration:none;
+       letter-spacing:.01em}
+  .masthead .kicker{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
+       color:var(--gold);font-weight:600;margin-bottom:8px}
+
+  nav{border-bottom:2px solid var(--navy);position:sticky;top:0;z-index:20;background:var(--cream)}
+  nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:34px;padding:14px 0}
+  nav a{font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+        color:var(--navy);text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent;transition:.2s}
+  nav a:hover,nav a:focus-visible{border-color:var(--gold);color:var(--gold)}
+
+  /* Article hero */
+  .hero{padding:48px 0 8px}
+  .eyebrow{display:inline-block;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;
+           font-weight:700;color:#fff;background:var(--gold);padding:5px 14px;border-radius:2px;margin-bottom:22px}
+  h1.title{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--navy);
+           font-size:clamp(2.1rem,5.6vw,3.6rem);line-height:1.06;letter-spacing:.005em}
+  .lede{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2.7vw,1.6rem);
+        color:#33414f;margin-top:20px;line-height:1.42}
+  .meta{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:22px;
+        font-size:.88rem;color:var(--muted)}
+  .meta strong{color:var(--navy);font-weight:600}
+  .meta .dot{width:4px;height:4px;border-radius:50%;background:var(--gold)}
+
+  /* Share */
+  .share{display:flex;align-items:center;gap:10px;margin-top:22px;flex-wrap:wrap}
+  .share span.lbl{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .share a,.share button{font-family:inherit;cursor:pointer;border:1px solid var(--line);
+        background:var(--cream-card);color:var(--navy);font-size:.8rem;font-weight:600;
+        padding:7px 14px;border-radius:30px;text-decoration:none;transition:.2s}
+  .share a:hover,.share button:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+  figure.hero-fig{margin:30px 0 6px;border:1px solid var(--line);background:var(--cream-card);
+        padding:14px;border-radius:4px;box-shadow:0 14px 34px -22px rgba(14,30,48,.5)}
+  figure.hero-fig img{display:block;width:100%;height:auto;border-radius:2px}
+  figure.hero-fig figcaption{font-size:.8rem;color:var(--muted);margin-top:12px;
+        border-left:3px solid var(--gold);padding-left:12px}
+
+  /* Body */
+  .body{padding:18px 0 10px}
+  .body h2{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--navy);
+        font-size:clamp(1.55rem,3.6vw,2.15rem);line-height:1.15;margin:42px 0 6px}
+  .body h2::before{content:"";display:block;width:46px;height:3px;background:var(--gold);
+        margin-bottom:16px;border-radius:2px}
+  .body p{font-size:1.06rem;margin:16px 0;color:#26303a}
+  .body strong{color:var(--navy);font-weight:600}
+  .body em{font-style:italic}
+
+  .dict{list-style:none;background:var(--cream-card);border:1px solid var(--line);
+        border-radius:6px;padding:18px 22px;margin:20px 0}
+  .dict li{font-size:.98rem;padding:7px 0;border-bottom:1px dashed var(--line)}
+  .dict li:last-child{border-bottom:none}
+  .dict li strong{color:var(--navy)}
+
+  .scandal{display:flex;gap:16px;margin:18px 0;padding:18px 20px;background:var(--cream-card);
+        border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:4px}
+  .scandal .num{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:2rem;
+        color:var(--gold);line-height:1;flex-shrink:0;min-width:30px}
+  .scandal p{margin:0;font-size:1.02rem}
+
+  .callout{background:var(--navy);color:#dbe4ee;border-radius:6px;padding:22px 26px;
+        margin:34px 0;font-size:.96rem}
+  .callout strong{color:var(--gold-soft)}
+
+  /* Sources */
+  .sources{margin-top:30px;background:var(--cream-card);border:1px solid var(--line);
+        border-radius:6px;padding:clamp(22px,4vw,34px)}
+  .sources h2{font-family:'Cormorant Garamond',serif;color:var(--navy);font-size:1.7rem;margin-bottom:6px}
+  .sources .note{font-size:.92rem;color:var(--muted);margin:10px 0 20px}
+  .sources h3{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+        font-weight:700;margin:18px 0 8px}
+  .sources ul{margin:0 0 4px 18px}
+  .sources li{font-size:.92rem;color:#33414f;margin:5px 0}
+
+  /* Back / footer */
+  .backbar{text-align:center;padding:30px 0}
+  .backbar a{font-weight:600;letter-spacing:.04em;color:var(--navy);text-decoration:none;
+        border-bottom:2px solid var(--gold);padding-bottom:3px;transition:.2s}
+  .backbar a:hover{color:var(--gold)}
+
+  footer{background:var(--navy-deep);color:#aeb9c6;margin-top:20px;padding:44px 0 30px}
+  footer .cols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:flex-end}
+  footer .brand{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:#fff}
+  footer .links{display:flex;gap:22px;flex-wrap:wrap}
+  footer .links a{font-size:.84rem;letter-spacing:.06em;text-decoration:none;
+        border-bottom:1px solid transparent;transition:.2s}
+  footer .links a:hover{color:var(--gold-soft);border-color:var(--gold-soft)}
+  footer .copy{font-size:.76rem;color:#6f7d8c;margin-top:26px;border-top:1px solid #1d3148;padding-top:18px}
+
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+  <div class="dateline">
+    <div class="wrap"><span>Buenos Aires, Argentina</span><span>Viernes 12 de junio de 2026</span></div>
+  </div>
+
+  <header class="masthead">
+    <div class="wrap">
+      <div class="kicker">Política · Gestión pública</div>
+      <a class="brand" href="index.html">Juan Pablo Capriotti</a>
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#recientes">Artículos</a></li>
+        <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+  <article>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="narrow">
+        <span class="eyebrow">Análisis político</span>
+        <h1 class="title">Corrupción, economía e incoherencia: el dilema del discurso anticasta de Javier Milei</h1>
+        <p class="lede">Llegó al poder prometiendo terminar con la corrupción y “la casta”. Hoy una seguidilla de escándalos golpea a su entorno justo cuando el escudo económico se debilita. ¿Cómo se espera que impacte en un gobierno que hizo de la honestidad su marca?</p>
+        <div class="meta">
+          <strong>Por Juan Pablo Capriotti</strong><span class="dot"></span>
+          <span>Técnico en Administración Pública (UNSAM)</span><span class="dot"></span>
+          <span>12 jun 2026 · 10 min de lectura</span>
+        </div>
+        <div class="share">
+          <span class="lbl">Compartir</span>
+          <a id="sh-wa" target="_blank" rel="noopener">WhatsApp</a>
+          <a id="sh-tw" target="_blank" rel="noopener">X</a>
+          <a id="sh-fb" target="_blank" rel="noopener">Facebook</a>
+          <button id="sh-copy" type="button">Copiar enlace</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTADA / GRÁFICO -->
+    <div class="wrap">
+      <figure class="hero-fig">
+        <img src="img/imagen-vs-inflacion-milei.png"
+             alt="Gráfico que cruza la imagen positiva y negativa de Milei con la inflación mensual y las fechas de los escándalos de corrupción.">
+        <figcaption>La imagen presidencial frente a la inflación mensual (IPC-INDEC) y los escándalos de corrupción. El deterioro se acelera cuando se agota la desinflación. Fuentes: Giacobbe e INDEC, vía cobertura periodística.</figcaption>
+      </figure>
+    </div>
+
+    <!-- CUERPO -->
+    <section class="body">
+      <div class="narrow">
+
+        <h2>La paradoja de origen</h2>
+        <p>Javier Milei construyó su ascenso sobre dos ideas que en su discurso significaban casi lo mismo: <strong>“casta”</strong> y <strong>corrupción</strong>. Prometer que iba a “terminar con la casta política” y a barrer con el robo que asociaba al kirchnerismo no fue un punto más de su programa: fue el corazón de su identidad y lo que unió a sus votantes.</p>
+        <p>Esto se explica con una idea llamada <em>issue ownership</em>, que podríamos traducir como <strong>“ser dueño de un tema”</strong>. Significa que, cuando la gente piensa en cierto asunto —por ejemplo, “honestidad” o “lucha contra la corrupción”—, automáticamente piensa en un dirigente en particular. Milei logró que la honestidad fuera “su” tema, su marca registrada.</p>
+        <p>Esa marca es muy potente mientras se sostiene, pero tiene un riesgo: si vos sos “el dueño” de la honestidad y aparecen hechos de corrupción a tu alrededor, el público no te castiga solo por el posible delito. Te castiga, además, por <strong>incoherencia</strong>: por prometer una cosa y mostrar otra. A esto podemos llamarlo <strong>“costo de hipocresía”</strong>. Un político que nunca prometió pureza paga un precio cuando hay un escándalo; uno que hizo de la pureza su bandera paga ese precio <em>y encima</em> un castigo extra por haber traicionado lo que prometió.</p>
+        <p>Ese es el terreno donde está hoy el gobierno. Una seguidilla de escándalos golpeó al círculo más cercano del Presidente —incluida su hermana y mano derecha en el poder, Karina Milei— justo en el punto donde su marca prometía limpieza. La pregunta, entonces, no es <em>si</em> esto le hace daño, sino <strong>de qué manera</strong>, <strong>a qué velocidad</strong> y <strong>hasta dónde</strong>.</p>
+
+        <h2>El catálogo: todos los escándalos sobre la mesa</h2>
+        <p>Para medir el impacto hay que ver el inventario completo, porque el daño es <strong>acumulativo</strong>: cada caso pesa poco solo, pero juntos van construyendo una imagen. Antes, un mini-diccionario de los términos judiciales que van a aparecer:</p>
+        <ul class="dict">
+          <li><strong>Imputado:</strong> persona señalada formalmente como posible responsable de un delito; recién arranca la investigación.</li>
+          <li><strong>Procesado:</strong> el juez ya reunió pruebas suficientes para considerar que <em>probablemente</em> participó del delito (no es una condena, pero es más grave que la imputación).</li>
+          <li><strong>Indagatoria:</strong> la declaración en la que el acusado se defiende ante el juez. Que llamen a alguien a indagatoria significa que la causa se le acerca.</li>
+          <li><strong>Asociación ilícita:</strong> organizarse, de forma estable, entre varias personas para cometer delitos.</li>
+          <li><strong>Dádivas:</strong> delito que comete un funcionario cuando acepta un regalo o beneficio en relación con su cargo.</li>
+        </ul>
+
+        <div class="scandal"><div class="num">1</div><p><strong>El criptoescándalo $LIBRA.</strong> El 14 de febrero de 2025 Milei promocionó en sus redes una criptomoneda llamada $LIBRA. El valor se desplomó horas después y perjudicó a unos 40.000 inversores. La Justicia investiga si fue una maniobra conocida como <em>pump and dump</em> (“inflar y tirar”): se hace subir artificialmente el precio para que unos pocos vendan caro justo antes de que se derrumbe, dejando al resto con pérdidas. Las pericias al teléfono del operador Mauricio Novelli detectaron varios llamados a Milei minutos antes del tuit, un borrador de contrato dirigido al Presidente con un espacio para su firma, y mensajes sobre presuntos pagos. El golpe más reciente es de junio de 2026: un informe preliminar de la Policía Federal concluyó que el código que difundió Milei no era público, lo que contradice su explicación de que solo promovió “una moneda pública”. Es, potencialmente, el escándalo que toca de forma más directa al propio Presidente.</p></div>
+
+        <div class="scandal"><div class="num">2</div><p><strong>Las coimas en la ANDIS (caso Spagnuolo).</strong> En agosto de 2025 se filtraron audios atribuidos a Diego Spagnuolo —extitular de la Agencia Nacional de Discapacidad y exabogado personal de Milei— en los que describía un sistema de “retornos” (coimas mencionadas como “el 3%”) en la compra de medicamentos, señalando a <strong>Karina Milei</strong> y a Eduardo “Lule” Menem. La causa terminó con 19 procesados en febrero de 2026 por asociación ilícita y sobreprecios, con la droguería Suizo Argentina en el centro. Es el caso más dañino en lo simbólico: la corrupción presunta no recae sobre un gasto abstracto, sino sobre fondos destinados a personas con discapacidad. Y que apunte a la hermana del Presidente lo vuelve políticamente explosivo.</p></div>
+
+        <div class="scandal"><div class="num">3</div><p><strong>El caso Espert–Fred Machado.</strong> José Luis Espert, candidato principal de La Libertad Avanza en la provincia de Buenos Aires, tuvo que bajarse de la lista en octubre de 2025 al confirmarse que había recibido 200.000 dólares de Federico “Fred” Machado, un empresario detenido y luego extraditado a Estados Unidos. Milei lo defendió hasta el final. Cuando en mayo de 2026 Machado se declaró culpable de lavado de dinero y fraude (evitando el cargo de narcotráfico), el Presidente usó esa novedad para denunciar una “operación mediática”, aunque Espert sigue investigado por lavado en la Argentina.</p></div>
+
+        <div class="scandal"><div class="num">4</div><p><strong>El caso Adorni.</strong> El más reciente, y el que más expone la contradicción con el discurso. El jefe de Gabinete, Manuel Adorni —antes vocero y cara visible de la “austeridad”—, quedó bajo investigación por viajes de lujo, compra de propiedades y reformas caras, además del traslado de la esposa de un funcionario en el avión presidencial, pese a que el propio Milei había prohibido usar aviones del Estado para particulares. El juez sospecha que un pasaje fue pagado por un periodista contratado por la TV Pública (que depende de Adorni), lo que sería el delito de dádivas. El daño acá es de <strong>tono</strong>: choca de frente con la imagen de sacrificio que el gobierno le pide a la gente.</p></div>
+
+        <div class="scandal"><div class="num">5</div><p><strong>Los antecedentes y las peleas internas.</strong> Antes de $LIBRA, Milei ya había promocionado otras criptomonedas que fracasaron (CoinX y el proyecto Vulcano). A esto se suma la guerra interna entre el sector de Santiago Caputo y el de los Menem —el episodio de una cuenta falsa en redes—, que no es corrupción, pero refuerza la idea de un oficialismo más ocupado en sus internas que en gobernar.</p></div>
+
+        <h2>Por qué, en teoría, esto debería dolerle más que a otros</h2>
+        <p>La corrupción es lo que se llama un <em>issue de valencia</em>. Suena técnico, pero la idea es simple: es un tema en el que <strong>casi todos opinan igual</strong>. Nadie sale a defender la corrupción, así como nadie está “a favor” de la inseguridad o del desempleo. (Se opone a los temas “de posición”, donde la gente sí se divide, como aborto o impuestos).</p>
+        <p>Lo curioso es que, aunque todos rechazan la corrupción, el castigo en las urnas suele ser <strong>más débil de lo esperable</strong>, porque pesan otras cosas: la economía, la grieta política y si hay o no una oposición convincente.</p>
+        <p>Lo que hace distinto el caso de Milei es justamente ese <strong>costo de hipocresía</strong>. Y hay señales de que está funcionando: desde los audios de la ANDIS, las encuestas muestran que <strong>“corrupción” se volvió una de las principales preocupaciones</strong> de la sociedad. En algunos sondeos de 2026 es incluso la palabra que más se asocia al gobierno, por encima de “economía”. Un estudio indicó que más del 60% le atribuye a Milei responsabilidad en el caso Spagnuolo. Su imagen positiva cayó a mínimos históricos (alrededor del 34-37%) y la negativa trepó a máximos. El dato más delicado para el oficialismo: parte de sus propios votantes empezó a pasar de la confianza a la crítica.</p>
+
+        <h2>La imagen en el tiempo: ¿coinciden las caídas con los escándalos?</h2>
+        <p>Si ponemos los números al lado de las fechas, aparece una historia bastante clara, aunque con matices. Para reconstruir la evolución uso principalmente los datos de la consultora Giacobbe —una de las que mejor le suele medir al gobierno, lo que hace que sus caídas sean <em>más</em> significativas— porque, al medir siempre del mismo modo, permite comparar mes a mes sin mezclar metodologías.</p>
+        <p>La serie arranca en su techo: a mediados de 2024 la imagen positiva rozó el <strong>58,7%</strong>, su mejor marca. Cuando estalló <strong>$LIBRA</strong>, el 14 de febrero de 2025, la positiva se mantuvo alta, en torno al <strong>49,6%</strong>: el escándalo hizo subir la negativa, pero no derrumbó la aprobación. En junio de 2025 la positiva todavía le ganaba con holgura a la negativa, <strong>48,1% contra 40,8%</strong>. El quiebre llegó en julio de 2025: la positiva cayó al <strong>44%</strong> y la negativa trepó al <strong>48%</strong>, cruzándose de manera sostenida por primera vez.</p>
+        <p>Recién después, a mediados de agosto, se filtraron los <strong>audios de la ANDIS</strong> (19/8), y poco más tarde llegó la <strong>derrota en la provincia de Buenos Aires</strong> (7/9, por unos 13 puntos). En septiembre, Management &amp; Fit midió la positiva en <strong>37,4%</strong> contra <strong>47,9%</strong>. Sin embargo, tras el <strong>triunfo en las legislativas</strong> del 26 de octubre, hubo un rebote: de un 42,4% / 51,8% a fin de octubre, la positiva se recuperó hasta cerca del <strong>47%</strong> en noviembre.</p>
+        <p>El alivio no duró. En febrero de 2026 se conoció el <strong>procesamiento de 19 personas en la causa ANDIS</strong>, y en marzo arrancó el <strong>caso Adorni</strong>. Para entonces la positiva estaba en <strong>41,7%</strong> y la negativa en <strong>49,6%</strong>. La caída se profundizó en mayo (<strong>35,9% / 53,9%</strong>) y tocó el piso de todo el mandato en junio de 2026, cuando —en coincidencia con el <strong>informe de la PFA sobre $LIBRA</strong> (10/6)— la positiva quedó en <strong>34,2%</strong> y la negativa en <strong>55%</strong>.</p>
+        <p>De esta secuencia se desprenden varias lecturas. <strong>Primero, la correlación existe, pero no es automática:</strong> $LIBRA hizo subir la negativa, pero no derrumbó la positiva, porque la economía todavía funcionaba como escudo. <strong>Segundo, el verdadero quiebre llegó en julio de 2025</strong>, <em>antes</em> de los audios de la ANDIS: parte del desgaste es económico y general, y los escándalos <strong>aceleran</strong> una caída que ya venía. <strong>Tercero, el combo de agosto-septiembre sí golpeó fuerte.</strong> <strong>Cuarto, la elección de octubre produjo un rebote</strong>: los escándalos no se tradujeron en castigo electoral. <strong>Y quinto, en 2026 el escudo se debilita</strong> y la imagen cae a mínimos, esta vez sin colchón económico, con varias consultoras coincidiendo (M&amp;F: ~37% vs 54%; UdeSA: 37% vs 60%; AtlasIntel: 35,5% vs 63%).</p>
+
+        <h2>El factor económico: el verdadero piso de la imagen</h2>
+        <p>Si los escándalos explican parte del desgaste, el otro motor —probablemente el principal— es el bolsillo. Y los números muestran un cruce notable: <strong>la imagen de Milei empezó a darse vuelta justo cuando se terminó la “buena noticia” de la inflación en baja.</strong></p>
+        <p>La desinflación fue el gran activo del gobierno durante 2024 y la primera mitad de 2025. El IPC del INDEC fue cediendo mes a mes hasta tocar un piso: <strong>1,5% en mayo y 1,6% en junio de 2025</strong>, el nivel más bajo en años. Ese momento coincide casi exactamente con el punto en que la imagen negativa supera a la positiva (julio de 2025). Mientras cada mes el número de inflación era mejor que el anterior, la aprobación se sostenía; cuando ese relato se agotó, empezó la caída.</p>
+        <p>Y después el cuadro empeoró, porque la inflación <strong>volvió a acelerarse</strong>. Tras el piso fue subiendo de a poco (2,3% en octubre, 2,5% en noviembre, 2,8% en diciembre) y en 2026 rompió otra vez el techo del 3%: enero y febrero marcaron <strong>2,9%</strong> cada uno y <strong>marzo de 2026 llegó a 3,4%</strong>, por encima de lo que esperaban el mercado y el propio gobierno, empujado por Educación, Transporte y los servicios regulados (luz, gas, agua). En abril aflojó a 2,6%, pero el daño ya estaba hecho.</p>
+        <p>A esto se suma lo más sensible para la vida cotidiana: el <strong>poder adquisitivo</strong>. Tras el piso inflacionario, los salarios no le ganaron a los precios y <strong>perdieron poder de compra mes a mes desde septiembre de 2025</strong>; en buena parte de 2025 los aumentos salariales le ganaron a la inflación en apenas 3 de los 12 meses. En 2026, con las paritarias ancladas en torno al 2% y la inflación corriendo más rápido, el salario real volvió a caer. El poder de compra del salario mínimo acumula una pérdida cercana al 35% desde el inicio de la gestión, y los servicios regulados subieron sistemáticamente más que los ingresos.</p>
+        <p>La lectura es la siguiente: la economía funcionó como <strong>escudo</strong> mientras la inflación bajaba, y eso explica por qué los primeros escándalos —incluido $LIBRA— no perforaron la imagen. Cuando el escudo se debilitó (inflación que vuelve a subir + salario real que cae), la imagen se desplomó <strong>y</strong> los escándalos empezaron a pegar con toda su fuerza. Por eso en los sondeos de 2026 conviven, arriba de todo, dos preocupaciones: la corrupción y el empleo/los salarios.</p>
+        <p>Una advertencia, para no exagerar: <strong>correlación no es causalidad.</strong> Marzo de 2026 es el mejor ejemplo de la trampa: ese mes coinciden el salto inflacionario <em>y</em> el estallido del caso Adorni, y es imposible separar con precisión cuánto pesó cada cosa. Lo más honesto es decir que economía y escándalos se potenciaron entre sí, con la economía como conductor de fondo y los escándalos como acelerador.</p>
+
+        <h2>Pero la realidad matiza el diagnóstico</h2>
+        <p>Acá aparece la parte que un análisis honesto no puede esquivar, y que ya asomó en el rebote de octubre-noviembre: <strong>el castigo que la teoría anticipaba no se vio en las urnas.</strong> En octubre de 2025, en plena tormenta de escándalos y apenas un mes después de la derrota bonaerense, La Libertad Avanza <strong>ganó las elecciones legislativas con más del 40% de los votos</strong>, casi triplicó su bloque de diputados (de 37 a 101) y de senadores (de 6 a 20), e incluso dio vuelta la provincia de Buenos Aires. Todos los escándalos ya estaban a la vista, y el gobierno no solo sobrevivió, sino que salió fortalecido.</p>
+        <p>¿Cómo se explica esa aparente contradicción? Con cuatro mecanismos que <strong>protegen</strong> a Milei del castigo. <strong>El ancla económica:</strong> mientras bajar la inflación funcionó como su gran logro, el votante priorizó la economía por encima de la ética. <strong>La grieta y el “voto en contra del otro”</strong> —el <em>partidismo negativo</em>—: mucha gente no vota tanto a favor de su candidato como en contra del que más rechaza, y el odio al kirchnerismo funciona como escudo ante cualquier denuncia. <strong>La oposición débil y dividida:</strong> un escándalo hace más daño cuando hay una alternativa creíble, y el peronismo fragmentado redujo ese riesgo. <strong>Y el estilo de respuesta:</strong> Milei niega todo, judicializa, no pide disculpas y cambia de tema hacia “el futuro”, una estrategia que en un clima polarizado conserva al núcleo más fiel.</p>
+
+        <h2>Lo que podría dar vuelta el cuadro</h2>
+        <p><strong>1. Si la economía deja de ser el escudo.</strong> Las mediciones de 2026 muestran a la gente más pesimista: crece el número de quienes creen que estarán peor dentro de un año. Cuando se cae la promesa de “mejora futura”, desaparece lo que tapaba a la corrupción.</p>
+        <p><strong>2. Los tiempos de la Justicia.</strong> Los escándalos políticos se diluyen; las causas penales no necesariamente. El cambio decisivo sería que $LIBRA avance hacia una citación al propio Presidente, o que la causa ANDIS alcance a Karina Milei y a los Menem. Un procesamiento de la hermana del Presidente cambiaría todo el escenario.</p>
+        <p><strong>3. El desgaste por acumulación.</strong> Ningún caso solo define un gobierno, pero la repetición construye un <em>marco interpretativo</em> (o <em>framing</em>): el “molde” con el que la gente lee todo. Si “corrupción” ya es la palabra que más define al gobierno, el relato anticasta dejó de ser una ventaja y empieza a volverse un problema.</p>
+        <p><strong>4. La pelea interna y la carrera hacia 2027.</strong> El dato más revelador de las últimas encuestas es que <strong>Patricia Bullrich aparece, dentro del propio espacio, con mejor imagen que Milei</strong>. Si la corrupción desgasta al Presidente, el oficialismo ya tiene un recambio interno a mano: el problema deja de ser “¿sobrevive el gobierno?” y pasa a ser “¿sobrevive el liderazgo de Milei?”.</p>
+
+        <h2>Conclusión: erosión lenta, no derrumbe de golpe</h2>
+        <p>El impacto esperable de los escándalos no es una bomba que tire abajo al gobierno, sino un <strong>desgaste gradual de aquello que le dio origen</strong>. Milei llegó al poder vendiendo honestidad y rechazo al sistema. Los casos $LIBRA, ANDIS, Espert y Adorni no lo destruyen de inmediato porque la economía, la grieta y la debilidad opositora todavía amortiguan el golpe. Pero sí están <strong>vaciando de contenido su promesa central</strong>.</p>
+        <p>La lección de fondo es que el discurso anticasta es un arma de doble filo: te da un electorado movilizado por la indignación, pero te ata a un estándar altísimo que tus propios funcionarios difícilmente van a cumplir. Mientras Milei pueda correr la conversación hacia la economía y hacia el enemigo kirchnerista, va a sostener su núcleo duro. El día en que la economía deje de respaldarlo, o en que la Justicia toque a su entorno más íntimo, la corrupción dejará de ser un “ruido” —como él insiste en llamarla— para convertirse en lo que la teoría anticipa: el punto exacto donde <strong>el que se presentó como lo nuevo termina pareciéndose a la casta que prometió eliminar</strong>.</p>
+
+        <div class="callout">
+          <strong>Nota.</strong> Este análisis se basa en información disponible hasta junio de 2026. Todas las causas mencionadas son investigaciones en curso; rige la presunción de inocencia para todos los involucrados: nadie es culpable hasta que una condena firme lo determine.
+        </div>
+
+        <!-- FUENTES -->
+        <div class="sources">
+          <h2>Fuentes consultadas</h2>
+          <p class="note">Aclaración de transparencia: los datos judiciales, oficiales y de encuestas fueron tomados de la cobertura periodística citada abajo; no se accedió de manera directa a los expedientes ni a los informes completos de las consultoras. El marco conceptual (ser dueño de un tema, los temas de valencia, el voto en contra del adversario, el encuadre mediático) corresponde a nociones consolidadas en la literatura de opinión pública y comportamiento electoral.</p>
+
+          <h3>Encuestas e instituciones (vía prensa)</h3>
+          <ul>
+            <li>Giacobbe Opinión Pública · Management &amp; Fit · AtlasIntel / Latam Pulse · Universidad de San Andrés · Analogías · Zubán Córdoba · Morning Consult.</li>
+          </ul>
+
+          <h3>Datos económicos</h3>
+          <ul>
+            <li>INDEC — IPC mensual 2025-2026, índice de salarios y canastas básicas.</li>
+            <li>Consultoras Equilibra, CEPA, Synopsis, CP Consultores e IARAF (Nadín Argañarás) — salario real y poder adquisitivo.</li>
+            <li>Ministerio de Capital Humano / SIPA — salario del sector privado registrado.</li>
+            <li>Boletín Oficial — Resolución 9/2025 (Salario Mínimo, Vital y Móvil).</li>
+          </ul>
+
+          <h3>Organismos oficiales y judiciales (vía prensa)</h3>
+          <ul>
+            <li>Dirección de Cibercrimen de la Policía Federal (informe sobre $LIBRA); fiscalía de Eduardo Taiano; juzgados federales de las causas $LIBRA y ANDIS; Boletín Oficial (Decreto 599/25); Justicia federal de EE.UU. (causa vinculada a Fred Machado).</li>
+          </ul>
+
+          <h3>Prensa</h3>
+          <ul>
+            <li>La Nación, Infobae, CNN en Español, El Destape, Chequeado, La Política Online, Perfil, Ámbito, Los Andes, LM Neuquén, El Tiempo (Colombia), Bloomberg Línea, El Cronista, iProfesional, MDZ, Minuto Uno, Letra P, Agrositio, Diario de Cuyo, La Izquierda Diario, CFIN, Bumeran y cobertura internacional de las elecciones de 2025.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="backbar"><a href="index.html">&larr; Volver a la portada</a></div>
+  </article>
+  </main>
+
+  <footer id="contacto">
+    <div class="wrap">
+      <div class="cols">
+        <div class="brand">Juan Pablo Capriotti</div>
+        <div class="links">
+          <a href="mailto:tu-email@ejemplo.com">Email</a>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">X / Twitter</a>
+        </div>
+      </div>
+      <div class="copy">© 2026 Juan Pablo Capriotti · Análisis político y de gestión pública.</div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var url = "https://juampicapriotti.github.io/articulo-milei-corrupcion.html";
+      var txt = "Corrupción, economía e incoherencia: el dilema del discurso anticasta de Milei";
+      var u = encodeURIComponent(url), t = encodeURIComponent(txt);
+      document.getElementById('sh-wa').href = "https://wa.me/?text=" + t + "%20" + u;
+      document.getElementById('sh-tw').href = "https://twitter.com/intent/tweet?text=" + t + "&url=" + u;
+      document.getElementById('sh-fb').href = "https://www.facebook.com/sharer/sharer.php?u=" + u;
+      var btn = document.getElementById('sh-copy');
+      btn.addEventListener('click', function(){
+        navigator.clipboard.writeText(url).then(function(){
+          var old = btn.textContent; btn.textContent = "¡Copiado!";
+          setTimeout(function(){ btn.textContent = old; }, 1800);
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
